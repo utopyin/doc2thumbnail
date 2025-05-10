@@ -1,12 +1,18 @@
 {
   "name": "doc2thumbnail",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun --env-file=.env.development.local run --hot src/index.ts",
+    "lint": "biome check src",
+    "lint:fix": "biome check --write --unsafe src",
+    "lint:unsafe": "biome check --write --unsafe src",
+    "format": "biome format --write src"
   },
   "dependencies": {
-    "hono": "^4.7.9"
+    "hono": "^4.7.9",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@types/bun": "latest"
   }
 }
