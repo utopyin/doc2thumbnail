@@ -2,8 +2,12 @@ import { createMiddleware } from "hono/factory";
 import { z } from "zod";
 
 export const zEnv = z.object({
-	testtt: z.coerce.number(),
+	PASSWORD: z.string(),
+	GOTENBERG_URL: z.string(),
+	REDIS_URL: z.string(),
 });
+
+export const ENV = zEnv.parse(process.env);
 
 export const loadEnv = createMiddleware(async (c, next) => {
 	const env = zEnv.safeParse(process.env);

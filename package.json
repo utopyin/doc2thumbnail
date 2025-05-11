@@ -1,18 +1,26 @@
 {
-  "name": "doc2thumbnail",
-  "scripts": {
-    "dev": "bun --env-file=.env.development.local run --hot src/index.ts",
-    "lint": "biome check src",
-    "lint:fix": "biome check --write --unsafe src",
-    "lint:unsafe": "biome check --write --unsafe src",
-    "format": "biome format --write src"
-  },
-  "dependencies": {
-    "hono": "^4.7.9",
-    "zod": "^3.24.4"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@types/bun": "latest"
-  }
+	"name": "doc2thumbnail",
+	"scripts": {
+		"dev": "bun --env-file=.env.development.local run --hot src/index.ts",
+		"lint": "biome check src",
+		"lint:fix": "biome check --write --unsafe src",
+		"lint:unsafe": "biome check --write --unsafe src",
+		"format": "biome format --write src",
+		"generate-password": "openssl rand -base64 32"
+	},
+	"dependencies": {
+		"@hono/zod-validator": "^0.5.0",
+		"bullmq": "^5.52.2",
+		"hono": "^4.7.9",
+		"ioredis": "^5.6.1",
+		"mime-types": "^3.0.1",
+		"neverthrow": "^8.2.0",
+		"pdf2pic": "^3.1.4",
+		"zod": "^3.24.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/bun": "latest",
+		"@types/mime-types": "^2.1.4"
+	}
 }

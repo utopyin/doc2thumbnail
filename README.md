@@ -1,5 +1,6 @@
 To install dependencies:
 ```sh
+brew install gs graphicsmagick
 bun install
 ```
 
