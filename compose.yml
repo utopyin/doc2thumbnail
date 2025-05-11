@@ -1,0 +1,19 @@
+services:
+  bun-server:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - GOTENBERG_URL=http://gotenberg:3000
+      - PASSWORD=${PASSWORD}
+    depends_on:
+      - redis
+      - gotenberg
+  
+  redis:
+    image: redis:latest
+  gotenberg:
+    image: gotenberg/gotenberg:latest
+  
+   

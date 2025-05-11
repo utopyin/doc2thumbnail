@@ -1,6 +1,7 @@
 {
 	"name": "doc2thumbnail",
 	"scripts": {
+		"start": "bun run src/index.ts",
 		"dev": "bun --env-file=.env.development.local run --hot src/index.ts",
 		"lint": "biome check src",
 		"lint:fix": "biome check --write --unsafe src",

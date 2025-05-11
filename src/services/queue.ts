@@ -77,3 +77,7 @@ worker.on("completed", async (job, result) => {
 		`Job ${job.name} completed with image of ${image.byteLength} bytes`,
 	);
 });
+
+worker.on("error", (err) => {
+	console.error(err);
+});
