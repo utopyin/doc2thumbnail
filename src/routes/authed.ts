@@ -34,10 +34,10 @@ export const authenticatedRoutes = new Hono()
 		return c.json({
 			jobId,
 			progress: job.progress,
-			isWaiting: job.isWaiting(),
-			isActive: job.isActive(),
-			isCompleted: job.isCompleted(),
-			isFailed: job.isFailed(),
-			isDelayed: job.isDelayed(),
+			isWaiting: await job.isWaiting(),
+			isActive: await job.isActive(),
+			isCompleted: await job.isCompleted(),
+			isFailed: await job.isFailed(),
+			isDelayed: await job.isDelayed(),
 		});
 	});
